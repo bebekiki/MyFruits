@@ -30,7 +30,11 @@ export class FruitsComponent implements OnInit {
     var sortOrder = 1;
     
     return function (a,b) {
-      var result = (a[title] > b[title]) ? -1 : (a[title] < b[title]) ? 1 : 0;
+      if(title == "name" || title == "color"){
+        var result = (a[title] < b[title]) ? -1 : (a[title] > b[title]) ? 1 : 0;
+      }else{
+        var result = (a[title] > b[title]) ? -1 : (a[title] < b[title]) ? 1 : 0;
+      }
       return result * sortOrder;
     }
   }
