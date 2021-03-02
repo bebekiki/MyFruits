@@ -1,0 +1,36 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+    <span>My fruits</span>
+    <div class="spacer"></div>
+    <div>
+      <span class="mr-2"><strong>{{firstLigne.name}} :    </strong></span>
+      <span class="mr-2">price : ${{firstLigne.price}}    </span>
+      <span class="mr-2">weight : {{firstLigne.weight}}g  </span>
+      <span>color : {{firstLigne.color}}</span>
+    </div>
+</div>
+
+<select [(ngModel)]="name" (ngModelChange)="orderTable($event)">
+    <option *ngFor="let title of names" [ngValue]="title">{{title}}</option>
+</select>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fruit of listFruits">
+        <td>{{fruit.name}}</td>
+        <td>{{fruit.price}}</td>
+        <td>{{fruit.weight}}</td>
+        <td>{{fruit.color}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
